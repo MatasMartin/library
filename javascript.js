@@ -2,8 +2,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     
     const books = document.getElementById("books");
     let isRead = false;
+    let numOfBooks = 0;
 
-    for(let i=0; i<20; i++) {
+    for(let i=0; i<numOfBooks; i++) {
         const book = document.createElement("div");
         book.className = "book";
         books.appendChild(book);
@@ -39,6 +40,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 
     }
+
+    const addBook = document.getElementsByClassName("add");
+
+    addBook.addEventListener("click", function() {
+        
+    });
 
 
 

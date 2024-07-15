@@ -75,7 +75,7 @@ svg {
     background-color: #a9a9a9;
 }
 
-.bookScreen fieldset {
+.bookScreen form {
     border: none;
     display: flex;
     flex-direction: column;
@@ -95,15 +95,28 @@ svg {
     justify-content: center;
     font-size: 1.3rem;
     font-weight: 500;
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 .youRead input {
     height: 2vh;
     width: 2vh;
+    cursor: pointer;
 }
 
-.submit {
-    background-color: red;
+.bookScreen .submit {
+    background-color: rgb(139, 139, 139);
+    height: 4vh;
+    margin-top: 4vh;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.bookScreen .submit:hover {
+    background-color: rgb(128, 128, 128);
 }
 
 .bookScreen p {

@@ -1,5 +1,6 @@
 
 let numOfBooks = 0;
+let temp = "";
 
 class theBook {
     constructor(bookName, bookAuthor, bookPages, bookYouRead) {
@@ -9,6 +10,8 @@ class theBook {
         this.youRead = bookYouRead.checked;
     }
 }
+
+
 
 
 function createBooks(theBooks) {
@@ -33,7 +36,9 @@ function createBooks(theBooks) {
         book.appendChild(pages);
 
         const read = document.createElement("button");
-        read.className = "read";
+        read.classList.add("read");
+        temp = "button" + (numOfBooks+1);
+        read.classList.add(temp);
         if(theBooks[numOfBooks].youRead) {
             read.id = "read";
         }
@@ -43,14 +48,33 @@ function createBooks(theBooks) {
         book.appendChild(read);
 
         const remove = document.createElement("button");
-        remove.className = "remove";
+        remove.classList.add("remove");
+        remove.classList.add(temp);
         const removeText = document.createElement("p");
         removeText.innerHTML = "REMOVE";
         remove.appendChild(removeText);
         book.appendChild(remove);
 
 
+        read.addEventListener("click", function() {
+            if (read.id === "read") {
+                read.removeAttribute("id");
+            } else {
+                read.id = "read";
+            }
+        });
+    
+        remove.addEventListener("click", function() {
+            book.remove();
+        });
+
+
     }
+
+
+    
+
+
 
 }
 
@@ -102,6 +126,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const addBook = document.getElementsByClassName("add")[0];
     const submit = document.getElementById("submit");
+
+    
+
+
+
+
 
 
     submit.addEventListener("click", submitFunction);

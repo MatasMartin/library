@@ -228,6 +228,7 @@ svg {
     outline: none;
     border: 1px solid black;
     background-color: #adadad;
+    cursor: pointer;
 }
 
 .book button:hover {
@@ -236,6 +237,7 @@ svg {
 
 .book .read {
     background-color: rgb(255, 87, 87);
+    
 }
 
 .book .read:hover {

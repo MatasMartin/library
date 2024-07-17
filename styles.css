@@ -49,8 +49,16 @@ svg {
     height: 100%;
     width: 100%;
     background-color: black;
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.black.move {
+    transition-duration: 500ms;
     opacity: 0.6;
     z-index: 15;
+    pointer-events: all;
 }
 
 .bookScreen {
@@ -71,8 +79,10 @@ svg {
     padding: 5vh 1vh;
     font-size: 1.2rem;
     gap: 1vh;
-    z-index: 20;
+    z-index: -1;
     background-color: #a9a9a9;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .bookScreen form {
@@ -124,6 +134,14 @@ svg {
     font-weight: bold;
     margin-top: -2vh;
 }
+
+.bookScreen.move {
+    transition-duration: 500ms;
+    opacity: 1;
+    z-index: 100;
+    pointer-events: all;
+}
+
 
 /* /////////////////////////////////////////// */
 

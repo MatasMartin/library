@@ -1,4 +1,14 @@
-document.addEventListener("DOMContentLoaded", (event) => {
+function buttonFunction() {
+
+    const black = document.getElementsByClassName("black")[0];
+    const bookScreen = document.getElementsByClassName("bookScreen")[0];
+
+    black.classList.add("move");
+    bookScreen.classList.add("move");
+    console.log("clicked");
+}
+
+document.addEventListener("DOMContentLoaded", function() {
     
     const books = document.getElementById("books");
     let isRead = false;
@@ -41,12 +51,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     }
 
-    const addBook = document.getElementsByClassName("add");
-
-    addBook.addEventListener("click", function() {
-        
-    });
-
-
+    const addBook = document.getElementsByClassName("add")[0];
+    
+    
+    addBook.addEventListener("click", buttonFunction);
 
   });
